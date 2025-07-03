@@ -1,0 +1,14 @@
+{
+  "C Boilerplate": {
+    "prefix": "cboiler",
+    "body": [
+      "#include <stdio.h>",
+      "",
+      "int main() {",
+      "    // code here",
+      "    return 0;",
+      "}"
+    ],
+    "description": "Basic C boilerplate with main function"
+  }
+}
