@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guess the Number</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    .game-container {
+      background-color: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    input[type="number"] {
+      padding: 0.5rem;
+      width: 100px;
+      font-size: 1rem;
+    }
+    button {
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      margin-top: 1rem;
+      cursor: pointer;
+    }
+    .message {
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="game-container">
+    <h2>Guess the Number (1-100)</h2>
+    <input type="number" id="guessInput" min="1" max="100" />
+    <button onclick="checkGuess()">Submit</button>
+    <div class="message" id="message"></div>
+    <p id="guessCount"></p>
+  </div>
+
+  <script>
+    const randomNumber = Math.floor(Math.random() * 100) + 1;
+    let guessCount = 0;
+
+    function checkGuess() {
+      const guess = parseInt(document.getElementById("guessInput").value);
+      const message = document.getElementById("message");
+      const guessDisplay = document.getElementById("guessCount");
+
+      guessCount++;
+
+      if (guess > randomNumber) {
+        message.textContent = "Lower Number Please!";
+        message.style.color = "orange";
+      } else if (guess < randomNumber) {
+        message.textContent = "Higher Number Please!";
+        message.style.color = "blue";
+      } else {
+        message.textContent = `Correct! You guessed it in ${guessCount} guesses.`;
+        message.style.color = "green";
+      }
+
+      guessDisplay.textContent = `Guesses: ${guessCount}`;
+    }
+  </script>
+</body>
+</html>
