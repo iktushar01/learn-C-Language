@@ -1,3 +1,5 @@
+// Print grade of a student based on marks using switch statements.
+
 #include <stdio.h> 
 int main () {
     int marks;
