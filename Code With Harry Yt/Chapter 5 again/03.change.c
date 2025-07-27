@@ -1,17 +1,13 @@
 #include <stdio.h>
 
-int sum (int, int);
-
-int sum(int x, int y){
-    printf("The Sum is %d\n", x + y);
+int change(int a){
+    a = 77;
+    return 0;
 }
 
 int main() {
-    // code here
-    int a = 1;
-    int b = 2;
-
-    sum(a,b);
-    
+    int b = 22;
+    change(b);  // The value of b remains 22
+    printf("b is %d", b);
     return 0;
 }
